@@ -1,10 +1,11 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
+    <title>@ViewBag.Title</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <link rel="icon" href="@Url.Content("~/favicon.ico")" />
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     <link href="~/Content/bootstrap.css" rel="stylesheet" />
@@ -19,7 +20,7 @@
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
     <footer class="container col-md-3 ml-md-auto">
-        <p class="float-right"><a href="https://github.com/AlexSherTemplar/SimpleMVCCalculator">GitHub</a></p>
+        <p class="float-right"><a href="https://github.com/AlexSherTemplar/SimpleMVCCalculator">My GitHub</a></p>
         <p><a href="#">©2020 No Inc</a> · <a href="#">No Privacy</a> · <a href="#">No Terms</a></p>
     </footer>
 </body>
