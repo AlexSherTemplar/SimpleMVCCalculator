@@ -2,30 +2,43 @@
     ViewBag.Title = "Home Page";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<div class="">
-    @using (Html.BeginForm())
-    {
-        <div class="form-group" >
-            <div class=" form-group ">
+<body>
+    
+    <div class="">
+        @using (Html.BeginForm())
+        {
+        <div class="container col-md-3 ml-md-auto myform">
+            <h4>Простой калькулятор на MVC</h4>
+            <div class="row-cols-2">
                 @Html.Label("Первое число")
                 @Html.TextBox("fst")
             </div>
-            <div class="form-group ">
-                @Html.Label("Действие")
-                
+            <div class="row">
+                <div class="col-3">
+                    @Html.Label("Действие")
+                </div>
+                <div class="col-4">
                     @Html.DropDownList("operation", new SelectList(new string[] { "+", "-", "*", "/" }))
-                
+                </div>
             </div>
-            <div class="form-group">
+            <div class="">
                 @Html.Label("Второе число")
                 @Html.TextBox("sec")
             </div>
             <br />
-            <div class="">
-                <p><input type="submit" class="btn btn-outline-primary" value="Result" /> </p>
+            <div class="row">
+                <p class="col-3">
+                    <input type="submit" class="btn btn-outline-primary" value="Расчитать" />
+                </p>
+                <div class="col-5 mytext-align">
+                    Результат: @ViewBag.Result
+
+                </div>
             </div>
+
         </div>
 
-        @ViewBag.Result;
-    }
-</div>
+
+        }
+    </div>
+</body>

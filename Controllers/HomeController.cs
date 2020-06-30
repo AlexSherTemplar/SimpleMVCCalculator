@@ -18,7 +18,7 @@ namespace MVCCalculator.Controllers
         {
             int a, b;
             a = b = 0;
-            if (!String.IsNullOrEmpty(fst) && String.IsNullOrEmpty(sec))
+            if (!String.IsNullOrEmpty(fst) && !String.IsNullOrEmpty(sec))
             {
                 a = Convert.ToInt32(fst);
                 b = Convert.ToInt32(sec);
