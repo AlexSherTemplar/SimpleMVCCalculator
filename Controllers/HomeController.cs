@@ -16,28 +16,32 @@ namespace MVCCalculator.Controllers
         [HttpPost]
         public ActionResult Index(string fst, string sec, string operation)
         {
-            int a = Convert.ToInt32(fst);
-            int b = Convert.ToInt32(sec);
-            int c = 0;
-            switch (operation)
+            int a, b;
+            a = b = 0;
+            if (!String.IsNullOrEmpty(fst) && String.IsNullOrEmpty(sec))
             {
-                case "+":
-                    c = a + b;
-                    break;
-                case "-":
-                    c = a - b;
-                    break;
-                case "*":
-                    c = a * b;
-                    break;
-                case "/":
-                    c = a / b;
-                    break;
-                default:
-                    c = 0;
-                    break;
+                a = Convert.ToInt32(fst);
+                b = Convert.ToInt32(sec);
             }
-            ViewBag.Result = c;
+                int c = 0;
+                switch (operation)
+                {
+                    case "+":
+                        c = a + b;
+                        break;
+                    case "-":
+                        c = a - b;
+                        break;
+                    case "*":
+                        c = a * b;
+                        break;
+                    case "/":
+                        c = a / b;
+                        break;
+                    
+                }
+                ViewBag.Result = c;
+            
             return View();
         }
 

@@ -2,26 +2,30 @@
     ViewBag.Title = "Home Page";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<div class="">
+    @using (Html.BeginForm())
+    {
+        <div class="form-group" >
+            <div class=" form-group ">
+                @Html.Label("Первое число")
+                @Html.TextBox("fst")
+            </div>
+            <div class="form-group ">
+                @Html.Label("Действие")
+                
+                    @Html.DropDownList("operation", new SelectList(new string[] { "+", "-", "*", "/" }))
+                
+            </div>
+            <div class="form-group">
+                @Html.Label("Второе число")
+                @Html.TextBox("sec")
+            </div>
+            <br />
+            <div class="row-cols-1">
+                <p><input type="submit" class="btn btn-outline-primary" value="Result" /> </p>
+            </div>
+        </div>
 
-@using (Html.BeginForm())
-{
-    <table class="table-bordered">
-        <thead>
-            <tr>
-                <td>Fst</td>
-                <td>Operation</td>
-                <td>Sec</td>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>@Html.TextBox("fst")</td>
-                <td>@Html.DropDownList("operation", new SelectList(new string[] { "+", "-", "*", "/" }))</td>
-                <td>@Html.TextBox("sec")</td>
-            </tr>
-        </tbody>
-    </table>
-    <p><input type="submit" class="btn btn-default"  value="Result" /> </p>
-
-    @ViewBag.Result;
-}
+        @ViewBag.Result;
+    }
+</div>
